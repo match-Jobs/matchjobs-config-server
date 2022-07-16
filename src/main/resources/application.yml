@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/match-Jobs/matchjobs-config-data.git
+          username: ${MATCH_JOBS_GIT_USER}
+          password: ${MATCH_JOBS_GIT_TOKEN}
+          default-label: "master"
+          searchPaths: notification-service
+          cloneOnStart: true
